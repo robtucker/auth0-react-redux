@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { combineEpics, createEpicMiddleware } from 'redux-observable'
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'
 import { Route, withRouter, Switch } from 'react-router'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
@@ -37,7 +36,7 @@ const store = createStore(
     combineReducers({
         [AUTH_REDUCER_KEY]: authReducer,
     }),
-    composeWithDevTools(
+    compose(
         applyMiddleware(
             routeMiddleware,
             epicMiddleware,
