@@ -7,11 +7,8 @@
   "author": "Rob Tucker <rtucker@coderlab.co.uk>",
   "license": "Unlicensed",
   "scripts": {
-    "copy-assets": "mkdir -p dist",
     "webpack:build": "webpack",
     "dev:build": "webpack-dev-server",
-    "dev:serve": "lite-server -c server.config.json",
-    "dev:api": "node server",
     "production:build": "npm run tsc:compile && NODE_ENV=production npm run webpack:build",
     "test": "jest",
     "tsc:compile": "rm -rf object; tsc",
